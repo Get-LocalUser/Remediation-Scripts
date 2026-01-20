@@ -15,5 +15,6 @@ Try {
     # Run vssadmin to resize the shadowstorage
     Invoke-Expression -Command "vssadmin Resize ShadowStorage /On=$driveLetter /For=$driveLetter /MaxSize=${maxSize}MB"
 } Catch {
-    Write-Host "Something IO went wrong: $($_.exception.message)"
+    Write-Output "Something IO went wrong: $($_.exception.message)"
+
     }
