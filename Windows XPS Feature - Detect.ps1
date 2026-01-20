@@ -1,13 +1,14 @@
 try {
     $Feature = Get-WindowsOptionalFeature -Online -FeatureName "Printing-XPSServices-Features"
     if ($Feature.State -eq "Enabled") {
-        Write-Host "Feature is enabled"
+        Write-Output "Feature is enabled"
         Exit 0
     } 
-    Write-Warning "Feature is not enabled"
+    Write-Output "Feature is not enabled"
     Exit 1
 }
 catch {
-    Write-Warning "Not Enabled"
+    Write-Output "Not Enabled"
     Exit 1
 }
+
